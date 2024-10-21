@@ -1,4 +1,4 @@
-{config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -13,7 +13,7 @@
         pad="8x8";
         initial-window-size-chars="82x23";
         resize-delay-ms="50";
-        font = "JetBrainsMono Nerd Font:size=16";
+        font = "Ubuntu Nerd Font:size=16";
         dpi-aware = "no";
       };
       scrollback = {

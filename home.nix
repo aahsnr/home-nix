@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, lib, self,...}:
+{ inputs, pkgs, config, lib, self, ...}:
 
 {
   home = {
@@ -9,17 +9,15 @@
   };
 
   imports = [
+    ./bat
     ./foot
+    ./fonts
     ./git
     ./gtk 
-    ./hyprland
-    #./mako
+    #./hyprland
     ./mpv
-    #./nvim
-    #./scripts
     ./gtk
     ./packages.nix
-    #./tools
     ./zathura
     ./zsh
     inputs.hyprland.homeManagerModules.default

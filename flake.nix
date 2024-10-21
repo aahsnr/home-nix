@@ -13,44 +13,24 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ags = {
-      url = "github:Aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    ags.url = "github:Aylur/ags";
 
   };
 
-  outputs = { nixpkgs, home-manager, ags, self, ... }:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
     let
-      inputs = self.inputs;
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      hmModule = inputs.home-manager.nixosModules.home-manager;
-      home-manager = {
-        useUserPackages = true;
-        useGlobalPkgs = true;
-        extraSpecialArgs = {
-          inherit inputs;
-          inherit self;
-        };
-      users.ahsan = import ./home;
-      };
-
+      system = "x86_64-linux";   
     in {
       homeConfigurations."ahsan" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = import nixpkgs { inherit system; };
 
-        modules = [  
-          hmModule
-          {inherit home-manager;}
-          {
-            home.packages = [
-              ags.packages.${system}.default
-            ];
-          
-          }
-        ];
-        specialArgs = {inherit inputs;};
+        # pass inputs as specialArgs
+        extraSpecialArgs = { inherit inputs; };
+
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = [ ./home.nix ];
+
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };

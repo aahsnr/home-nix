@@ -5,14 +5,18 @@
     enable = true;
     config = {
       #theme = "Catppuccin Macchiato";
-      italic-text = always;
-      paging = never;
+      italic-text = "always";
+      paging = "never";
       pager="less --RAW-CONTROL-CHARS --quit-if-one-screen --mouse";
       map-syntax = [
         "*.ino:C++"
         ".ignore:Git Ignore"
       ];
     };
+    extraPackages = with pkgs.bat-extras; [
+        batdiff batman batgrep batwatch 
+    ];
+
     syntaxes = {
       gleam = {
         src = pkgs.fetchFromGitHub {
@@ -24,8 +28,5 @@
         file = "syntax/gleam.sublime-syntax";
       };
     };
-    extraPackages = [
-      with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
-    ];
   };
 }

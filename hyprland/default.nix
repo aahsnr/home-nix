@@ -3,11 +3,6 @@ let
   hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
   plugins = inputs.hyprland-plugins.packages.${pkgs.system};
 
-  yt = pkgs.writeShellScript "yt" ''
-    notify-send "Opening video" "$(wl-paste)"
-    mpv "$(wl-paste)"
-  '';
-
   playerctl = "${pkgs.playerctl}/bin/playerctl";
   brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
   pactl = "${pkgs.pulseaudio}/bin/pactl";

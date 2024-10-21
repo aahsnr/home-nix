@@ -9,6 +9,7 @@
   };
 
   imports = [
+    ./ags
     ./bat
     ./foot
     ./fonts

@@ -4,12 +4,11 @@
   home = {
     username = "ahsan";
     homeDirectory = "/home/ahsan";
-    stateVersion = "23.11";
+    stateVersion = "24.05";
     extraOutputsToInstall = ["doc" "info" "devdoc"];
   };
 
   imports = [
-    ./ags_setup.nix
     ./foot
     ./git
     ./gtk 
@@ -20,10 +19,9 @@
     #./scripts
     ./gtk
     ./packages.nix
-    ./shell
     #./tools
     ./zathura
-    #./zsh
+    ./zsh
     inputs.hyprland.homeManagerModules.default
   ];
 }

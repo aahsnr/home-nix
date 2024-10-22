@@ -46,10 +46,14 @@
 
   imports = [ 
     ./ags
+    ./alacritty
     ./bat
+    ./fonts
     ./foot
     ./git
+    ./kitty
     ./lazygit
+    ./mpv
     inputs.ags.homeManagerModules.default
   ];
 

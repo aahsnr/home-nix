@@ -16,15 +16,13 @@
         "$character"
       ];
       character = {
-        success_symbol = "[ ](bold blue)";
-        error_symbol = "[ ](bold red)";
-        vicmd_symbol = "[](bold yellow)";
+        success_symbol = "[λ](green)";
+        error_symbol = "[λ](red)";
+        vimcmd_symbol = "[λ](green)";
       };
       directory = {
-        format = " [$path](blue)";
-        truncation_length = 3;
-        truncate_to_repo=false;
-        disabled = false;
+        home_symbol = " ";
+        style = "cyan";
       };
       git_branch = {
         format = "[󰘬 ](yellow)[$branch](yellow) ";

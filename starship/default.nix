@@ -5,6 +5,8 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
+      conda.symbol = |" ";
+      python.symbol = " ";
       add_newline = false;
       line_break.disabled = true;
       format = lib.concatStrings [
@@ -40,9 +42,6 @@
         staged = "+${count}";
         renamed = "*${count}";
         deleted = "-${count}";
-      };
-      conda = {
-        symbol = ' ';
       };
     };
   };

@@ -54,6 +54,9 @@
     ./kitty
     ./lazygit
     ./mpv
+    ./tealdeer
+    ./zathura
+    ./zoxide
     inputs.ags.homeManagerModules.default
   ];
 

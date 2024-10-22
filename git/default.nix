@@ -3,12 +3,18 @@
 {
   programs.git = {
     enable = true;
+    lfs.enable = true;
     userName = "zielOS";
     userEmail = "ahsanur041@gmail.com";
-    #signing = {
-    #  key = "056CFD15A9F99B0E";
-    #  signByDefault = true;
-  #  };
+    signing = {
+      key = "C4F48AB2F59DC91C";
+      signByDefault = true;
+    };
+    
+    delta = {
+      enable = true;
+      options.dark = true;
+    };
     ignores = [
       ".cache/"
       ".DS_Store"

@@ -48,6 +48,8 @@
     ./ags
     ./bat
     ./foot
+    ./git
+    ./lazygit
     inputs.ags.homeManagerModules.default
   ];
 

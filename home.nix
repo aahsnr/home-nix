@@ -44,20 +44,27 @@
     # EDITOR = "emacs";
   };
 
+
   imports = [ 
     ./ags
     ./alacritty
+    ./anyrun
     ./bat
     ./fonts
     ./foot
     ./git
+    #./hyprland
     ./kitty
     ./lazygit
     ./mpv
+    ./nix
+    ./pkgs    
     ./tealdeer
+    ./thunar
     ./zathura
     ./zoxide
     inputs.ags.homeManagerModules.default
+    inputs.anyrun.homeManagerModules.default
   ];
 
   # Let Home Manager install and manage itself.

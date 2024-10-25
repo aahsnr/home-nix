@@ -11,7 +11,9 @@
     spotify
     gcc
     cmake
+    nwg-drawer
+    nwg-look
+    nwg-hello
     config.wayland.windowManager.hyprland.package
-    pyprland
    ];
 }

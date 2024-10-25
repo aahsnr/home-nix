@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{ config, pkgs, ...}: 
+
+{
   gtk = {
     enable = true;
     theme = {
@@ -17,8 +19,16 @@
     };
     font = {
       name = "JetBrainsMono Nerd Font";
-      size = 12;
+      size = 13;
     };
+    gtk3.bookmarks = [
+      "file://${config.home.homeDirectory}/Dev"
+      "file://${config.home.homeDirectory}/Documents"
+      "file://${config.home.homeDirectory}/Downloads"
+      "file://${config.home.homeDirectory}/Music"
+      "file://${config.home.homeDirectory}/Pictures"
+      "file://${config.home.homeDirectory}/Videos"
+    ];
     gtk3.extraConfig = {
       gtk-xft-antialias = 1;
       gtk-xft-hinting = 1;
@@ -43,10 +53,11 @@
       libsForQt5.qt5ct
       breeze-icons
     ];
+
     pointerCursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
-      size = 16;
+      package = pkgs.catppuccin-cursors.macchiatoMauve;
+      name = "Bibata-Modern-Ice";
+      size = 24;
       gtk.enable = true;
       x11.enable = true;
     };
@@ -58,7 +69,7 @@
   };
   qt = {
     enable = true;
-    platformTheme = "qt5ct";
+    platformTheme.name = "gtk3";
     style = {
       name = "Catppuccin-Frappe-Dark";
       package = pkgs.catppuccin-kde.override {

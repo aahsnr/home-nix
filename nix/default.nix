@@ -12,11 +12,11 @@
     registry = lib.mapAttrs (_: v: {flake = v;}) inputs;
     settings = {
       flake-registry = "/etc/nix/registry.json";
-      auto-optimise-store = true;
       builders-use-substitutes = false;
+      allowed-users = ["@wheel" "ahsan"];
+      trusted-users = ["@wheel" "ahsan"];
       max-jobs = "auto";
       keep-going = true;
-      log-lines = 50;
       # substituters = [
       #   "https://cache.nixos.org"
       #   "https://nix-community.cachix.org"
@@ -38,11 +38,6 @@
     };
     extraOptions = ''
       experimental-features = nix-command flakes
-      keep-outputs = false
-      warn-dirty = true
-      keep-derivations = false
-      min-free = ${toString (100 * 1024 * 1024)}
-      max-free = ${toString (1024 * 1024 * 1024)}
     '';
   };
 

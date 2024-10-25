@@ -53,19 +53,26 @@
     ./fonts
     ./foot
     ./git
-    #./hyprland
+    ./hyprland
     ./kitty
     ./lazygit
     ./mpv
-    ./nix
-    ./pkgs    
+    ./pkgs
     ./tealdeer
+    ./theming
     ./thunar
     ./zathura
     ./zoxide
     inputs.ags.homeManagerModules.default
     inputs.anyrun.homeManagerModules.default
   ];
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowBroken = true;
+    };
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

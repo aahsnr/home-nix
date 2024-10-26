@@ -5,5 +5,9 @@
     enableZshIntegration = true;
     icons = "always";
     git = true;
+    # extraOptions = [
+    #   "--group-directories-first"
+    #   "--header"
+    # ];
   };
 }

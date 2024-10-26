@@ -15,5 +15,6 @@
     ./misc.nix
     ./plugins.nix
     ./rules.nix
+    ./autostart.nix
   ];
 }

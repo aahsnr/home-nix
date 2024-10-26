@@ -42,6 +42,7 @@
     ./alacritty
     ./anyrun
     ./bat
+    ./cliphist
     ./direnv
     #./emacs
     ./eza
@@ -53,6 +54,7 @@
     ./hypridle
     ./hyprpaper
     #./hyprlock
+    ./keyring
     ./kitty
     ./lazygit
     ./mpv

@@ -4,7 +4,9 @@
   home.packages = with pkgs; [
     bitwarden-desktop
     onlyoffice-bin
-    brave
+    vivaldi
+    vivaldi-ffmpeg-codecs
+    google-chrome
     spotify
     unzip
     pymol
@@ -16,6 +18,6 @@
     nwg-drawer
     nwg-look
     nwg-hello
-    inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland
+    
    ];
 }

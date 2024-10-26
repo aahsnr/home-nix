@@ -13,7 +13,7 @@
         pad="8x8";
         initial-window-size-chars="82x23";
         resize-delay-ms="50";
-        font = "Ubuntu Nerd Font:size=16";
+        font = "Ubuntu Mono Nerd Font:size=16";
         dpi-aware = "no";
       };
       scrollback = {

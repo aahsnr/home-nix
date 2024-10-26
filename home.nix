@@ -42,10 +42,17 @@
     ./alacritty
     ./anyrun
     ./bat
+    ./direnv
+    #./emacs
+    ./eza
     ./fonts
     ./foot
+    ./fzf
     ./git
     ./hyprland
+    ./hypridle
+    ./hyprpaper
+    #./hyprlock
     ./kitty
     ./lazygit
     ./mpv
@@ -54,6 +61,7 @@
     ./theming
     ./thunar
     #./texlive #old libraries
+    ./xdg-portal
     ./zathura
     ./zoxide
     inputs.ags.homeManagerModules.default

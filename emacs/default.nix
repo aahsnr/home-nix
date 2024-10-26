@@ -1,9 +1,27 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, callPackage, ... }:
 
 {
-  services.emacs = {
+  programs.emacs = {
     enable = true;
-    package = pkgs.emacsPgtk;
-    extraPackages = (epkgs: [ epkgs.vterm ] );
+    package = pkgs.emacs29-pgtk;
+    extraPackages = epkgs:  [ 
+      epkgs.use-package epkgs.no-littering epkgs.all-the-icons epkgs.all-the-icons-dired epkgs.cape epkgs.citar epkgs.citar-denote epkgs.citar-embark epkgs.consult epkgs.consult-denote epkgs.corfu epkgs.evil-nerd-commenter epkgs.dashboard epkgs.denote epkgs.denote-explore epkgs.denote-menu epkgs.dired-open epkgs.ranger epkgs.drag-stuff epkgs.ranger epkgs.editorconfig epkgs.eglot epkgs.emojify epkgs.embark epkgs.embark-consult epkgs.evil epkgs.evil-collection epkgs.evil-tutor epkgs.evil-goggles epkgs.eshell-toggle epkgs.eshell-syntax-highlighting epkgs.format-all epkgs.flycheck epkgs.general epkgs.git-timemachine epkgs.helpful epkgs.hl-todo epkgs.highlight-indent-guides epkgs.rainbow-mode epkgs.ibuffer-project epkgs.aggressive-indent epkgs.auctex epkgs.auctex-latexmk epkgs.cdlatex epkgs.cdlatex epkgs.magit epkgs.marginalia epkgs.doom-modeline epkgs.neotree epkgs.nerd-icons epkgs.nerd-icons-completion epkgs.nerd-icons-corfu epkgs.nerd-icons-dired epkgs.nix-mode epkgs.orderless epkgs.org epkgs.org-fancy-priorities epkgs.org-superstar epkgs.prescient epkgs.rainbow-delimiters epkgs.centaur-tabs epkgs.tempel epkgs.doom-themes epkgs.vertico epkgs.vertico-prescient epkgs.vterm epkgs.vterm-toggle epkgs.which-key epkgs.yasnippet-snippets epkgs.yasnippet
+    ]; 
+  };
+
+  home.file = { 
+    ".config/emacs/init.el".source = ./init.el;
+    ".config/emacs/art" = { 
+      source = ./art;
+      recursive = true;
+    };
+    ".config/emacs/eshell" = {
+      source = ./eshell;
+      recursive = true;
+    };
+    ".config/emacs/lisp" = {
+      source = ./lisp;
+      recursive = true;
+    };
   };
 }

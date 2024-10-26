@@ -8,7 +8,7 @@
     ubuntu_font_family
     jetbrains-mono
     (google-fonts.override {fonts = ["Inter"];})
-    (nerdfonts.override {fonts = ["Ubuntu" "JetBrainsMono"];})
+    (nerdfonts.override {fonts = ["Ubuntu" "UbuntuMono"];})
   ];
 
   fonts = {

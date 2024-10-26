@@ -18,5 +18,6 @@
     nwg-drawer
     nwg-look
     nwg-hello
+    sbctl
    ];
 }

@@ -52,6 +52,7 @@
       libsForQt5.qtstyleplugin-kvantum
       libsForQt5.qt5ct
       breeze-icons
+      kdePackages.qt6ct
     ];
 
     pointerCursor = {

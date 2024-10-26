@@ -6,6 +6,19 @@
     homeDirectory = "/home/ahsan";
     stateVersion = "24.11";
     extraOutputsToInstall = ["doc" "info" "devdoc"];
+
+    #--- Setting Session Variables ---
+    sessionVariables = {
+      EDITOR = "nvim";
+      BROWSER = "brave";
+      TERMINAL = "alacritty";
+    };
+
+    #--- Setting Session Path ---
+    sessionPath = [
+      "$HOME/.local/bin"
+      "/usr/libexec"
+    ];
   };
 
 
@@ -24,27 +37,6 @@
     # '';
   };
 
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. These will be explicitly sourced when using a
-  # shell provided by Home Manager. If you don't want to manage your shell
-  # through Home Manager then you have to manually source 'hm-session-vars.sh'
-  # located at either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/ahsan/etc/profile.d/hm-session-vars.sh
-  #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
-
-
   imports = [ 
     ./ags
     ./alacritty
@@ -61,6 +53,7 @@
     ./tealdeer
     ./theming
     ./thunar
+    #./texlive #old libraries
     ./zathura
     ./zoxide
     inputs.ags.homeManagerModules.default
@@ -71,6 +64,7 @@
     config = {
       allowUnfree = true;
       allowBroken = true;
+      allowUnfreePredicate = true;
     };
   };
 

@@ -46,6 +46,42 @@
         "SUPER, Z, exec, zotero"
         "SUPER, T, exec, thunar"
         "SUPERSHIFT, R, exec, jabref"
+
+        #-- Workspaces --
+        "CTRL_ALT, left, exec, hyprnome --previous"               
+        "CTRL_ALT, right, exec, hyprnome"
+        "SUPER_CTRL_ALT, left, exec, hyprnome --previous --move"  
+        "SUPER_CTRL_ALT, right, exec, hyprnome --move" 
+
+        #-- Misc --
+        "CTRL SHIFT, R,   exec, ags -q; ags"
+        "SUPER, X, exec, ags -t powermenu"
+        "SUPER, M, exec, actions --menu"
+        "SUPER, C, exec, actions --calendar"
+        "SUPER, F1, exec, gamemode"
+        "SUPER, C, movetoworkspace, special"
+      ];
+
+      bindle = [
+        #-- Screenshot --
+        ",XF86Launch4,   exec, ags -r 'recorder.start()'"
+        ",Print,         exec, ags -r 'recorder.screenshot()'"    
+        "SHIFT,Print,    exec, ags -r 'recorder.screenshot(true)'"
+
+        #-- Volume --
+        ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%" 
+        ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%" 
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
+
+        #-- Brightness --
+        ",XF86MonBrightnessUp, exec, lightctl up 5"
+        ",XF86MonBrightnessDown, exec, lightctl down 5"
+      ];
+      
+      bindm = [
+        "SUPER, mouse:272, movewindow"
+        "SUPER, mouse:273, resizewindow"
+        "SUPER ALT, mouse:272, resizewindow"
       ];
     };
   };

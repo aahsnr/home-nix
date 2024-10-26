@@ -2,18 +2,20 @@
 
 {
   home.packages = with pkgs; [
+    bitwarden-desktop
+    onlyoffice-bin
     brave
     spotify
     unzip
     pymol
     xournalpp
-    transmission_4-gtk
+    deluge-gtk
     spotify
     gcc
     cmake
     nwg-drawer
     nwg-look
     nwg-hello
-    config.wayland.windowManager.hyprland.package
+    inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland
    ];
 }

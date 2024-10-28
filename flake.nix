@@ -7,7 +7,6 @@
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     matugen.url = "github:InioX/matugen";
-    yazi.url = "github:sxyazi/yazi";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -83,17 +82,35 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-
-    stylix.url = "github:danth/stylix";
-    
+ 
     nix-doom-emacs-unstraightened = {
       url = "github:marienz/nix-doom-emacs-unstraightened";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    yazi = {
+      url = "github:sxyazi/yazi";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
+    catppuccin = {
+      url = "github:catppuccin/lazygit";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zen-browser = {
+      url = "github:zielOS/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { nixpkgs, home-manager, stylix, ... }@inputs:
+  outputs = { nixpkgs, home-manager, yazi, ... }@inputs:
     let
       system = "x86_64-linux";   
     in {
@@ -106,8 +123,10 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [ 
-          ./home.nix 
-          stylix.homeManagerModules.stylix
+          ./home.nix
+					({ pkgs, ... }: {
+						home.packages = [ yazi.packages.${pkgs.system}.default ];
+					})
         ];
 
         # Optionally use extraSpecialArgs

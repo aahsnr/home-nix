@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    cachix
     bitwarden-desktop
     onlyoffice-bin
     vivaldi
@@ -20,5 +21,6 @@
     nwg-hello
     sbctl
     zotero
+    inputs.zen-browser.packages."${system}".specific
    ];
 }

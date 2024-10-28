@@ -38,37 +38,37 @@
   };
 
   imports = [ 
-    ./ags
-    ./alacritty
-    ./anyrun
-    ./bat
-    ./cliphist
-    ./direnv
-    #./emacs
-    ./eza
-    ./fonts
-    ./foot
-    ./fzf
-    ./git
-    ./hyprland
-    ./hypridle
-    ./hyprpaper
-    ./hyprlock
-    ./keyring
-    ./kitty
-    ./lazygit
-    ./mpv
-    ./pkgs
-    ./tealdeer
-    ./theming
-    ./xdg-portal
-    ./yazi
-    ./zathura
-    ./zoxide
-    ./zsh
-    inputs.nix-doom-emacs-unstraightened.hmModule
-    inputs.ags.homeManagerModules.default
-    inputs.anyrun.homeManagerModules.default
+    # ./ags
+    # ./alacritty
+    # ./anyrun
+    # ./bat
+    # ./cliphist
+    # ./direnv
+    # #./emacs
+    # ./eza
+    # ./fonts
+    # ./foot
+    # ./fzf
+    # ./git
+    # ./hyprland
+    # ./hypridle
+    # ./hyprpaper
+    # ./hyprlock
+    # ./keyring
+    # ./kitty
+    # ./lazygit
+    # ./mpv
+    # ./pkgs
+    # ./tealdeer
+    # ./theming
+    # ./xdg-portal
+    # ./yazi
+    # ./zathura
+    # ./zoxide
+    # ./zsh
+    # inputs.nix-doom-emacs-unstraightened.hmModule
+    # inputs.ags.homeManagerModules.default
+    # inputs.anyrun.homeManagerModules.default
   ];
 
   nixpkgs = {

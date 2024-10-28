@@ -46,9 +46,9 @@
 ** Setup vc-use-package
 
 #+begin_src emacs-lisp
-(unless (package-installed-p 'vc-use-package)
-  (package-vc-install "https://github.com/slotThe/vc-use-package"))
-(require 'vc-use-package)
+;;(unless (package-installed-p 'vc-use-package)
+;;  (package-vc-install "https://github.com/slotThe/vc-use-package"))
+;;(require 'vc-use-package)
 #+end_src
 
 ** Straight Package Management
@@ -1539,9 +1539,9 @@ Install =luacheck= from your Linux distro's repositories for flycheck to work co
 * ORG BLOCK CAPF
 
 #+begin_src emacs-lisp
-(require 'org-block-capf)
-(with-eval-after-load 'org
-  (add-hook 'org-mode-hook #'org-block-capf-add-to-completion-at-point-functions))
+;;(require 'org-block-capf)
+;;(with-eval-after-load 'org
+;;  (add-hook 'org-mode-hook #'org-block-capf-add-to-completion-at-point-functions))
 
 #+end_src
 
@@ -1661,38 +1661,6 @@ Install =luacheck= from your Linux distro's repositories for flycheck to work co
 
 #+begin_src emacs-lisp
 ;(global-prettify-symbols-mode t)
-#+end_src
-
-#+begin_src emacs-lisp
-(defun my/org-mode/load-prettify-symbols ()
-  (interactive)
-  (setq prettify-symbols-alist
-    '(("#+begin_src" . ?)
-      ("#+BEGIN_SRC" . ?)
-      ("#+end_src" . ?)
-      ("#+END_SRC" . ?)
-      ("#+begin_example" . ?)
-      ("#+BEGIN_EXAMPLE" . ?)
-      ("#+end_example" . ?)
-      ("#+END_EXAMPLE" . ?)
-      ("#+header:" . ?)
-      ("#+HEADER:" . ?)
-      ("#+name:" . ?﮸)
-      ("#+NAME:" . ?﮸)
-      ("#+results:" . ?)
-      ("#+RESULTS:" . ?)
-      ("#+call:" . ?)
-      ("#+CALL:" . ?)
-      (":PROPERTY:" . ?)
-      (":property:" . ?)
-      (":LOGBOOK:" . ?)
-      (":logbook:" . ?)))
-  (prettify-symbols-mode 1))
-#+end_src
-
-
-#+begin_src emacs-lisp
-(add-hook 'org-mode-hook 'my/org-mode/load-prettify-symbols)
 #+end_src
 
 * RAINBOW DELIMITERS

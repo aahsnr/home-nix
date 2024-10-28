@@ -7,13 +7,12 @@
 }: {
   services.hypridle = {
     enable = true;
-
     package = inputs.hypridle.packages.${pkgs.system}.hypridle;
 
     settings = {
       general = {
         lock_cmd = lib.getExe config.programs.hyprlock.package;
-        before_sleep_cmd = "${pkgs.systemd}/bin/loginctl lock-session";
+        before_sleep_cmd = "loginctl lock-session";
         after_sleep_cmd = "hyprctl dispatch dpms on";
       };
 
@@ -22,11 +21,6 @@
           timeout = 150;
           on-timeout = "brightnessctl -s set 10";
           on-resume = "brightnessctl -r";
-        }
-        {
-          timeout = 150;
-          on-timeout = "brightnessctl -sd rgb:kbd_backlight set 0";
-          on-resume = "brightnessctl -rd rgb:kbd_backlight";
         }
         {
           timeout = 300;

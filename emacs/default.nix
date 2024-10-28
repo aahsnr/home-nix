@@ -1,27 +1,73 @@
-{ config, pkgs, lib, callPackage, ... }:
-
+{config, pkgs, callPackage, ... }:
 {
-  programs.emacs = {
-    enable = true;
-    package = pkgs.emacs29-pgtk;
-    extraPackages = epkgs:  [ 
-      epkgs.use-package epkgs.no-littering epkgs.all-the-icons epkgs.all-the-icons-dired epkgs.cape epkgs.citar epkgs.citar-denote epkgs.citar-embark epkgs.consult epkgs.consult-denote epkgs.corfu epkgs.evil-nerd-commenter epkgs.dashboard epkgs.denote epkgs.denote-explore epkgs.denote-menu epkgs.dired-open epkgs.ranger epkgs.drag-stuff epkgs.ranger epkgs.editorconfig epkgs.eglot epkgs.emojify epkgs.embark epkgs.embark-consult epkgs.evil epkgs.evil-collection epkgs.evil-tutor epkgs.evil-goggles epkgs.eshell-toggle epkgs.eshell-syntax-highlighting epkgs.format-all epkgs.flycheck epkgs.general epkgs.git-timemachine epkgs.helpful epkgs.hl-todo epkgs.highlight-indent-guides epkgs.rainbow-mode epkgs.ibuffer-project epkgs.aggressive-indent epkgs.auctex epkgs.auctex-latexmk epkgs.cdlatex epkgs.cdlatex epkgs.magit epkgs.marginalia epkgs.doom-modeline epkgs.neotree epkgs.nerd-icons epkgs.nerd-icons-completion epkgs.nerd-icons-corfu epkgs.nerd-icons-dired epkgs.nix-mode epkgs.orderless epkgs.org epkgs.org-fancy-priorities epkgs.org-superstar epkgs.prescient epkgs.rainbow-delimiters epkgs.centaur-tabs epkgs.tempel epkgs.doom-themes epkgs.vertico epkgs.vertico-prescient epkgs.vterm epkgs.vterm-toggle epkgs.which-key epkgs.yasnippet-snippets epkgs.yasnippet
-    ]; 
-  };
+# ...
 
-  home.file = { 
-    ".config/emacs/init.el".source = ./init.el;
-    ".config/emacs/art" = { 
-      source = ./art;
-      recursive = true;
-    };
-    ".config/emacs/eshell" = {
-      source = ./eshell;
-      recursive = true;
-    };
-    ".config/emacs/lisp" = {
-      source = ./lisp;
-      recursive = true;
-    };
-  };
+  programs.emacs.package = pkgs.emacs-unstable-pgtk;
+
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+      sha256 = "0gx4yj2gi5spy197h9hqf9pfhkrl7caslky3fpy8pjnhkiqqk92f";
+    }))
+  ];
+
+  home.packages = [
+    (pkgs.emacsWithPackagesFromUsePackage {
+      # Your Emacs config file. Org mode babel files are also
+      # supported.
+      # NB: Config files cannot contain unicode characters, since
+      #     they're being parsed in nix, which lacks unicode
+      #     support.
+      # config = ./emacs.org;
+      config = ./init.el;
+
+      # Whether to include your config as a default init file.
+      # If being bool, the value of config is used.
+      # Its value can also be a derivation like this if you want to do some
+      # substitution:
+      #   defaultInitFile = pkgs.substituteAll {
+      #     name = "default.el";
+      #     src = ./emacs.el;
+      #     inherit (config.xdg) configHome dataHome;
+      #   };
+      defaultInitFile = true;
+
+      # Package is optional, defaults to pkgs.emacs
+      package = pkgs.emacs-pgtk;
+
+      # By default emacsWithPackagesFromUsePackage will only pull in
+      # packages with `:ensure`, `:ensure t` or `:ensure <package name>`.
+      # Setting `alwaysEnsure` to `true` emulates `use-package-always-ensure`
+      # and pulls in all use-package references not explicitly disabled via
+      # `:ensure nil` or `:disabled`.
+      # Note that this is NOT recommended unless you've actually set
+      # `use-package-always-ensure` to `t` in your config.
+      alwaysEnsure = true;
+
+      # For Org mode babel files, by default only code blocks with
+      # `:tangle yes` are considered. Setting `alwaysTangle` to `true`
+      # will include all code blocks missing the `:tangle` argument,
+      # defaulting it to `yes`.
+      # Note that this is NOT recommended unless you have something like
+      # `#+PROPERTY: header-args:emacs-lisp :tangle yes` in your config,
+      # which defaults `:tangle` to `yes`.
+      alwaysTangle = false;
+
+      # Optionally provide extra packages not in the configuration file.
+      extraEmacsPackages = epkgs: [
+        epkgs.cask
+      ];
+
+      # Optionally override derivations.
+      # override = final: prev: {
+      #   weechat = prev.melpaPackages.weechat.overrideAttrs(old: {
+      #     patches = [ ./weechat-el.patch ];
+      #   });
+      # };
+    })
+  ];
+
+
+
+# ...
 }

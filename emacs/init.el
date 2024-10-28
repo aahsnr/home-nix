@@ -27,9 +27,9 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-(unless (package-installed-p 'vc-use-package)
-  (package-vc-install "https://github.com/slotThe/vc-use-package"))
-(require 'vc-use-package)
+;;(unless (package-installed-p 'vc-use-package)
+;;  (package-vc-install "https://github.com/slotThe/vc-use-package"))
+;;(require 'vc-use-package)
 
 ;; (defvar bootstrap-version)
 ;; (let ((bootstrap-file
@@ -1161,9 +1161,9 @@
 
   (push '("conf-unix" . conf-unix) org-src-lang-modes))
 
-(require 'org-block-capf)
-(with-eval-after-load 'org
-  (add-hook 'org-mode-hook #'org-block-capf-add-to-completion-at-point-functions))
+;;(require 'org-block-capf)
+;;(with-eval-after-load 'org
+;;  (add-hook 'org-mode-hook #'org-block-capf-add-to-completion-at-point-functions))
 
 (custom-set-faces
  '(org-level-1 ((t (:inherit outline-1 :height 1.3))))
@@ -1253,33 +1253,6 @@
   (prescient-persist-mode +1))
 
 ;(global-prettify-symbols-mode t)
-
-(defun my/org-mode/load-prettify-symbols ()
-  (interactive)
-  (setq prettify-symbols-alist
-    '(("#+begin_src" . ?)
-      ("#+BEGIN_SRC" . ?)
-      ("#+end_src" . ?)
-      ("#+END_SRC" . ?)
-      ("#+begin_example" . ?)
-      ("#+BEGIN_EXAMPLE" . ?)
-      ("#+end_example" . ?)
-      ("#+END_EXAMPLE" . ?)
-      ("#+header:" . ?)
-      ("#+HEADER:" . ?)
-      ("#+name:" . ?﮸)
-      ("#+NAME:" . ?﮸)
-      ("#+results:" . ?)
-      ("#+RESULTS:" . ?)
-      ("#+call:" . ?)
-      ("#+CALL:" . ?)
-      (":PROPERTY:" . ?)
-      (":property:" . ?)
-      (":LOGBOOK:" . ?)
-      (":logbook:" . ?)))
-  (prettify-symbols-mode 1))
-
-(add-hook 'org-mode-hook 'my/org-mode/load-prettify-symbols)
 
 (use-package rainbow-delimiters
   :hook ((prog-mode . rainbow-delimiters-mode)

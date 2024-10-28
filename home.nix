@@ -44,7 +44,7 @@
     ./bat
     ./cliphist
     ./direnv
-    #./emacs
+    ./emacs
     ./eza
     ./fonts
     ./foot
@@ -53,7 +53,7 @@
     ./hyprland
     ./hypridle
     ./hyprpaper
-    #./hyprlock
+    ./hyprlock
     ./keyring
     ./kitty
     ./lazygit
@@ -61,11 +61,11 @@
     ./pkgs
     ./tealdeer
     ./theming
-    ./thunar
     #./texlive #old libraries
     ./xdg-portal
     ./zathura
     ./zoxide
+    ./zsh
     inputs.ags.homeManagerModules.default
     inputs.anyrun.homeManagerModules.default
   ];

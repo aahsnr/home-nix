@@ -19,5 +19,6 @@
     nwg-look
     nwg-hello
     sbctl
+    zotero
    ];
 }

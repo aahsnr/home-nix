@@ -4,9 +4,9 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Frappe-Compact-Pink-Dark";
+      name = "Catppuccin-Macchiato-Flamingo-Dark";
       package = pkgs.catppuccin-gtk.override {
-        accents = ["pink"];
+        accents = ["flamingo"];
         tweaks = ["rimless"];
         size = "compact";
         variant = "frappe";
@@ -18,7 +18,7 @@
       name = "Papirus";
     };
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "Ubuntu Nerd Font";
       size = 13;
     };
     gtk3.bookmarks = [
@@ -56,8 +56,8 @@
     ];
 
     pointerCursor = {
-      package = pkgs.catppuccin-cursors.macchiatoMauve;
-      name = "Bibata-Modern-Ice";
+      package = pkgs.catppuccin-cursors.macchiatoFlamingo;
+      name = "Catppuccin-macchiato-flamingo-cursors";
       size = 24;
       gtk.enable = true;
       x11.enable = true;
@@ -72,7 +72,7 @@
     enable = true;
     platformTheme.name = "gtk3";
     style = {
-      name = "Catppuccin-Frappe-Dark";
+      name = "Catppuccin-Macchiato-Flamingo-Dark";
       package = pkgs.catppuccin-kde.override {
         flavour = ["frappe"];
         accents = ["pink"];

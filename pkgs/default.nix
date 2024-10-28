@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, packages, self, ...}:
+{ inputs, pkgs, config, self, ...}:
 
 {
   home.packages = with pkgs; [
@@ -9,18 +9,21 @@
     vivaldi-ffmpeg-codecs
     google-chrome
     spotify
+    gcc14
+    cmake
+    python312Packages.python
     unzip
     pymol
     xournalpp
     deluge-gtk
     spotify
-    gcc
-    cmake
     nwg-drawer
     nwg-look
     nwg-hello
     sbctl
     zotero
-    inputs.zen-browser.packages."${system}".specific
+    nix-prefetch-git
+    nix-prefetch-github
+    inputs.zen-browser.packages."${system}".specific 
    ];
 }

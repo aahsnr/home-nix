@@ -3,9 +3,9 @@
 {
   wayland.windowManager.hyprland = {
     plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      #inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
       inputs.hy3.packages.${pkgs.system}.hy3
-      inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
+      #inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
     ];
     settings = {
       plugin = {
@@ -21,12 +21,12 @@
             trigger_height = 500;
           };
         };
-        overview = {
-          autoDrag = true;
-          autoScroll = true;
-          exitOnClick = true;
-          switchOnDrop = true;
-        };
+        # overview = {
+        #   autoDrag = true;
+        #   autoScroll = true;
+        #   exitOnClick = true;
+        #   switchOnDrop = true;
+        # };
       };
     }; 
   };

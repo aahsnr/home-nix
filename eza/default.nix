@@ -3,11 +3,12 @@
   programs.eza = {
     enable = true;
     enableZshIntegration = true;
-    icons = "always";
+    icons = "auto";
     git = true;
-    # extraOptions = [
-    #   "--group-directories-first"
-    #   "--header"
-    # ];
+    extraOptions = [
+      "--group-directories-first"
+      "--tree"
+      "--all"
+    ];
   };
 }

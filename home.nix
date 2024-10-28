@@ -66,6 +66,7 @@
     ./zathura
     ./zoxide
     ./zsh
+    inputs.nix-doom-emacs-unstraightened.hmModule
     inputs.ags.homeManagerModules.default
     inputs.anyrun.homeManagerModules.default
   ];

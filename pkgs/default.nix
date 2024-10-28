@@ -24,6 +24,7 @@
     zotero
     nix-prefetch-git
     nix-prefetch-github
+    dropbox
     inputs.zen-browser.packages."${system}".specific 
    ];
 }

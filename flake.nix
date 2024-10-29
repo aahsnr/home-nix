@@ -7,7 +7,6 @@
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     matugen.url = "github:InioX/matugen";
-    yazi.url = "github:sxyazi/yazi";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -84,34 +83,47 @@
       inputs.flake-utils.follows = "flake-utils";
     };
 
-    stylix.url = "github:danth/stylix";
-    
     nix-doom-emacs-unstraightened = {
       url = "github:marienz/nix-doom-emacs-unstraightened";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    yazi = { 
+      url = "github:sxyazi/yazi"; 
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { nixpkgs, home-manager, stylix, ... }@inputs:
+  outputs = { nixpkgs, home-manager, yazi, rust-overlay, ... }@inputs:
     let
       system = "x86_64-linux";   
     in {
       homeConfigurations."ahsan" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { inherit system; };
-
-        # pass inputs as specialArgs
-        extraSpecialArgs = { inherit inputs; };
+          # pass inputs as specialArgs
+        extraSpecialArgs = { 
+          inherit inputs;
+          inherit yazi;
+          inherit rust-overlay;
+        };
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [ 
           ./home.nix 
-          stylix.homeManagerModules.stylix
-        ];
+       ];
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
       };
     };
 }

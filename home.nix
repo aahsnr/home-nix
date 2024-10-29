@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, lib, self, ... }:
+{ inputs, pkgs, config, lib, ... }:
 
 {
   home = {
@@ -63,6 +63,7 @@
     ./theming
     # #./texlive #old libraries
     ./xdg-portal
+    ./yazi
     ./zathura
     ./zoxide
     ./zsh

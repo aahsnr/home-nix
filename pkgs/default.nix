@@ -1,30 +1,25 @@
-{ inputs, pkgs, config, self, ...}:
+{ inputs, pkgs, config, packages, self, ...}:
 
 {
   home.packages = with pkgs; [
-    cachix
     bitwarden-desktop
     onlyoffice-bin
     vivaldi
     vivaldi-ffmpeg-codecs
     google-chrome
+    brave
     spotify
-    gcc14
-    cmake
-    python312Packages.python
     unzip
     pymol
     xournalpp
     deluge-gtk
     spotify
+    gcc
+    cmake
     nwg-drawer
     nwg-look
     nwg-hello
     sbctl
     zotero
-    nix-prefetch-git
-    nix-prefetch-github
-    dropbox
-    inputs.zen-browser.packages."${system}".specific 
    ];
 }

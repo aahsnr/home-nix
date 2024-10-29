@@ -5,16 +5,10 @@
     enable = true;
     settings = {
       gui.theme = {
-        darkTheme = true;
-        activeBorderColor = [ "#f0c6c6" "bold" ];
-        inactiveBorderColor = [ "#a5adcb" ];
-        optionsTextColor = [ "#8aadf4" ];
-        selectedLineBgColor = [ "#363a4f" ];
-        cherryPickedCommitBgColor = [ "#494d64" ];
-        cherryPickedCommitFgColor = [ "#f0c6c6" ];
-        unstagedChangesColor = [ "#ed8796" ];
-        defaultFgColor = [ "#cad3f5" ];
-        searchingActiveBorderColor = [ "#eed49f" ];
+        lightTheme = true;
+        activeBorderColor = [ "blue" "bold" ];
+        inactiveBorderColor = [ "black" ];
+        selectedLineBgColor = [ "default" ];
       };
     };
   };

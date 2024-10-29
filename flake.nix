@@ -2,10 +2,12 @@
   description = "Home Manager configuration of ahsan";
 
   inputs = {
+    # Specify the source of Home Manager and Nixpkgs.
     systems.url = "github:nix-systems/default-linux";
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     matugen.url = "github:InioX/matugen";
+    yazi.url = "github:sxyazi/yazi";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,7 +26,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland"; 
+    hyprland.url = "github:hyprwm/Hyprland?submodules=1";
 
     hypridle = {
       url = "github:hyprwm/hypridle";
@@ -81,35 +83,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
- 
+
+    stylix.url = "github:danth/stylix";
+    
     nix-doom-emacs-unstraightened = {
       url = "github:marienz/nix-doom-emacs-unstraightened";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-   
-    catppuccin = {
-      url = "github:catppuccin/lazygit";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    zen-browser = {
-      url = "github:zielOS/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    eza = {
-      url = "github:eza-community/eza";
-      inputs.nixpkgs.follows = "nixpkgs"; 
-    };
-
+    
   };
 
-  outputs = { nixpkgs, home-manager, pyprland, ... }@inputs:
+  outputs = { nixpkgs, home-manager, stylix, ... }@inputs:
     let
       system = "x86_64-linux";   
     in {
@@ -121,15 +105,13 @@
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [
-          ./home.nix
-					# ({ pkgs, ... }: {
-					# 	home.packages = [ yazi.packages.${pkgs.system}.default ];
-					# })
-					({ pkgs, ... }: {
-						home.packages = [pyprland.packages."x86_64-linux".pyprland];
-					})
+        modules = [ 
+          ./home.nix 
+          stylix.homeManagerModules.stylix
         ];
+
+        # Optionally use extraSpecialArgs
+        # to pass through arguments to home.nix
       };
     };
 }

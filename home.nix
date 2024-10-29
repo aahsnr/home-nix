@@ -11,7 +11,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       BROWSER = "brave";
-      TERMINAL = "foot";
+      TERMINAL = "alacritty";
     };
 
     #--- Setting Session Path ---
@@ -44,7 +44,7 @@
     ./bat
     ./cliphist
     ./direnv
-    #./emacs
+    # ./emacs
     ./eza
     ./fonts
     ./foot
@@ -61,12 +61,11 @@
     ./pkgs
     ./tealdeer
     ./theming
+    # #./texlive #old libraries
     ./xdg-portal
-    ./yazi
     ./zathura
     ./zoxide
     ./zsh
-    inputs.nix-doom-emacs-unstraightened.hmModule
     inputs.ags.homeManagerModules.default
     inputs.anyrun.homeManagerModules.default
   ];

@@ -50,6 +50,7 @@
     ./foot
     ./fzf
     ./git
+    #./helpers
     ./hyprland
     ./hypridle
     ./hyprpaper

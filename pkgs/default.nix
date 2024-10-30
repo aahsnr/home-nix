@@ -23,6 +23,9 @@
     nwg-hello
     sbctl
     zotero
+    nixgl.auto.nixGLDefault
+    #nixgl.auto.nixGLNvidia
+    #nixgl
     #rust-bin.stable.latest.minimal 
   ];
 }

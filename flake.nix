@@ -103,18 +103,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixgl = {
+      url = "github:nix-community/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, yazi, rust-overlay, ... }@inputs:
+  outputs = { nixpkgs, home-manager, yazi, rust-overlay, nixgl, ... }@inputs:
     let
       system = "x86_64-linux";   
     in {
       homeConfigurations."ahsan" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { 
           inherit system;
-          #overlays = [  ];
+          overlays = [ nixgl.overlay ];
         };
-          # pass inputs as specialArgs
         extraSpecialArgs = { 
           inherit inputs;
           inherit yazi;

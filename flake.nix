@@ -110,7 +110,10 @@
       system = "x86_64-linux";   
     in {
       homeConfigurations."ahsan" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { inherit system; };
+        pkgs = import nixpkgs { 
+          inherit system;
+          #overlays = [  ];
+        };
           # pass inputs as specialArgs
         extraSpecialArgs = { 
           inherit inputs;

@@ -7,7 +7,6 @@
     onlyoffice-bin
     vivaldi
     vivaldi-ffmpeg-codecs
-    google-chrome
     brave
     spotify
     unzip

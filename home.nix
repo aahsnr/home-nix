@@ -69,6 +69,7 @@
     ./zsh
     inputs.ags.homeManagerModules.default
     inputs.anyrun.homeManagerModules.default
+    inputs.nix-doom-emacs-unstraightened.hmModule
   ];
 
   nixpkgs = {

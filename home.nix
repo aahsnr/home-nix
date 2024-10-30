@@ -78,6 +78,9 @@
       allowUnfree = true;
       allowBroken = true;
       allowUnfreePredicate = true;
+      permittedInsecurePackages = [
+        "olm-3.2.16"
+      ];
     };
   };
 

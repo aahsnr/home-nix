@@ -24,6 +24,7 @@
     sbctl
     zotero
     nixgl.auto.nixGLDefault
+    nheko
     #nixgl.auto.nixGLNvidia
     #nixgl
     #rust-bin.stable.latest.minimal 

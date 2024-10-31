@@ -122,6 +122,7 @@
           inherit inputs;
           inherit yazi;
           inherit rust-overlay;
+          inherit nixgl;
         };
 
         # Specify your home configuration modules here, for example,

@@ -4,7 +4,7 @@
   programs.zathura = {
     enable = true;
     options = {
-      font = "JetBrainsMono Nerd Font 12";
+      font = "Ubuntu Nerd Font 13";
       adjust-open = "best-fit";
       selection-clipboard = "clipboard";
       window-title-basename = "true";

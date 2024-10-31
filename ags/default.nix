@@ -12,6 +12,8 @@
       gpu-screen-recorder
       hyprpicker
       btop
+      grim 
+      slurp
       matugen
       swww
       dart-sass

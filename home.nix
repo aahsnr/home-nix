@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, lib, ... }:
+{ inputs, pkgs, config, lib, nixgl, ... }:
 
 {
   home = {
@@ -36,6 +36,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
+
 
   imports = [ 
     ./ags
@@ -83,6 +84,9 @@
       ];
     };
   };
+
+
+
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

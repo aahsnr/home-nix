@@ -1,8 +1,6 @@
 { pkgs, config, ... }:
 
 {
-
-
   programs.yazi = {
     enable = true;
     settings = {
@@ -42,6 +40,10 @@
         macro_workers = 10;
         bizarre_retry = 5;
       };
+
+      plugins = [
+        full-border
+      ];
     };
   };
 }

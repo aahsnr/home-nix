@@ -19,5 +19,6 @@
     nodejs_22
     texlab
     emacs-lsp-booster
+    yazi
   ];
 }

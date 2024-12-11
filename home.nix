@@ -41,15 +41,15 @@
   imports = [ 
     # ./ags
     # ./alacritty
-    # ./anyrun
-    # ./bat
+    ./anyrun
+    ./bat
     # ./cliphist
     # ./direnv
     # ./emacs
-    # ./eza
+    ./eza
     ./fonts
-    # ./foot
-    # ./fzf
+    ./foot
+    ./fzf
     # ./git
     # ./gpg
     # ./helpers
@@ -57,7 +57,7 @@
     # ./hypridle
     # ./hyprpaper
     # ./hyprlock
-    ./keyring
+    # ./keyring
     # ./kitty
     ./lazygit
     # ./mpv
@@ -68,10 +68,10 @@
     # ./xdg-portal
     ./yazi
     # ./zathura
-    # ./zoxide
+    ./zoxide
     ./zsh
     # inputs.ags.homeManagerModules.default
-    # inputs.anyrun.homeManagerModules.default
+    inputs.anyrun.homeManagerModules.default
     # inputs.nix-doom-emacs-unstraightened.hmModule
   ];
 
@@ -82,9 +82,6 @@
       allowUnfreePredicate = true;
     };
   };
-
-
-
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

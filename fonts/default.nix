@@ -2,19 +2,18 @@
 
 { 
   home.packages = with pkgs; [
-    corefonts
-    fira-code
-    fira-code-symbols
     ubuntu_font_family
     jetbrains-mono
+    nerd-fonts.ubuntu
+    nerd-fonts.ubuntu-mono
+    nerd-fonts.jetbrains-mono
     (google-fonts.override {fonts = ["Inter"];})
-    (nerdfonts.override {fonts = ["Ubuntu" "UbuntuMono"];})
   ];
 
   fonts = {
     fontconfig = {
       enable = true;
-      defaultFonts.monospace = [ "Ubuntu Mono" ];
+      defaultFonts.monospace = [ "JetBrains Mono" ];
     };
   };
 }

@@ -4,7 +4,7 @@
   home = {
     username = "ahsan";
     homeDirectory = "/home/ahsan";
-    stateVersion = "24.11";
+    stateVersion = "25.05";
     extraOutputsToInstall = ["doc" "info" "devdoc"];
 
     #--- Setting Session Variables ---
@@ -47,10 +47,11 @@
     # ./direnv
     # ./emacs
     # ./eza
-    # ./fonts
+    ./fonts
     # ./foot
     # ./fzf
-    ./git
+    # ./git
+    # ./gpg
     # ./helpers
     # ./hyprland
     # ./hypridle
@@ -60,12 +61,12 @@
     # ./kitty
     ./lazygit
     # ./mpv
-    # ./pkgs
+    ./pkgs
     # ./tealdeer
     # ./theming
     # ./texlive #old libraries
     # ./xdg-portal
-    # ./yazi
+    ./yazi
     # ./zathura
     # ./zoxide
     ./zsh
@@ -79,9 +80,6 @@
       allowUnfree = true;
       allowBroken = true;
       allowUnfreePredicate = true;
-      permittedInsecurePackages = [
-        "olm-3.2.16"
-      ];
     };
   };
 

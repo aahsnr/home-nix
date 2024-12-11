@@ -57,4 +57,6 @@
       }
     ];
   };
+
+  programs.thefuck.enableZshIntegration = true;
 }

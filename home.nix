@@ -6,7 +6,7 @@
     homeDirectory = "/home/ahsan";
     stateVersion = "25.05";
     extraOutputsToInstall = ["doc" "info" "devdoc"];
-
+    
     #--- Setting Session Variables ---
     # sessionVariables = {
     #   EDITOR = "nvim";
@@ -15,10 +15,10 @@
     # };
 
     #--- Setting Session Path ---
-    # sessionPath = [
-    #   "$HOME/.local/bin"
-    #   "/usr/libexec"
-    # ];
+    sessionPath = [
+      "$HOME/.local/bin"
+    # "/usr/libexec"
+    ];
   };
 
 
@@ -47,8 +47,9 @@
     # ./direnv
     # ./emacs
     ./eza
+    ./fastfetch
     ./fonts
-    ./foot
+    # ./foot
     ./fzf
     # ./git
     # ./gpg
@@ -62,11 +63,12 @@
     ./lazygit
     # ./mpv
     ./pkgs
+    ./starship
     # ./tealdeer
     # ./theming
     # ./texlive #old libraries
     # ./xdg-portal
-    ./yazi
+    # ./yazi
     # ./zathura
     ./zoxide
     ./zsh

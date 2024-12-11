@@ -8,17 +8,17 @@
     extraOutputsToInstall = ["doc" "info" "devdoc"];
 
     #--- Setting Session Variables ---
-    sessionVariables = {
-      EDITOR = "nvim";
-      BROWSER = "brave";
-      TERMINAL = "alacritty";
-    };
+    # sessionVariables = {
+    #   EDITOR = "nvim";
+    #   BROWSER = "brave";
+    #   TERMINAL = "alacritty";
+    # };
 
     #--- Setting Session Path ---
-    sessionPath = [
-      "$HOME/.local/bin"
-      "/usr/libexec"
-    ];
+    # sessionPath = [
+    #   "$HOME/.local/bin"
+    #   "/usr/libexec"
+    # ];
   };
 
 
@@ -39,39 +39,39 @@
 
 
   imports = [ 
-    ./ags
-    ./alacritty
-    ./anyrun
-    ./bat
-    ./cliphist
-    ./direnv
+    # ./ags
+    # ./alacritty
+    # ./anyrun
+    # ./bat
+    # ./cliphist
+    # ./direnv
     # ./emacs
-    ./eza
-    ./fonts
-    ./foot
-    ./fzf
+    # ./eza
+    # ./fonts
+    # ./foot
+    # ./fzf
     ./git
-    #./helpers
-    ./hyprland
-    ./hypridle
-    ./hyprpaper
-    ./hyprlock
-    ./keyring
-    ./kitty
+    # ./helpers
+    # ./hyprland
+    # ./hypridle
+    # ./hyprpaper
+    # ./hyprlock
+    # ./keyring
+    # ./kitty
     ./lazygit
-    ./mpv
-    ./pkgs
-    ./tealdeer
-    ./theming
-    # #./texlive #old libraries
-    ./xdg-portal
-    ./yazi
-    ./zathura
-    ./zoxide
+    # ./mpv
+    # ./pkgs
+    # ./tealdeer
+    # ./theming
+    # ./texlive #old libraries
+    # ./xdg-portal
+    # ./yazi
+    # ./zathura
+    # ./zoxide
     ./zsh
-    inputs.ags.homeManagerModules.default
-    inputs.anyrun.homeManagerModules.default
-    inputs.nix-doom-emacs-unstraightened.hmModule
+    # inputs.ags.homeManagerModules.default
+    # inputs.anyrun.homeManagerModules.default
+    # inputs.nix-doom-emacs-unstraightened.hmModule
   ];
 
   nixpkgs = {

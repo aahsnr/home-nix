@@ -4,11 +4,11 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    userName = "zielOS";
-    userEmail = "ahsanur041@gmail.com";
+    userName = "aahsnr";
+    userEmail = "ahsanur041@proton.me";
     signing = {
-      key = "C4F48AB2F59DC91C";
-      signByDefault = true;
+      key = "C1CD1A946EAAA7DB";
+      #signByDefault = true;
     };
     
     delta = {

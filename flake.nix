@@ -80,7 +80,6 @@
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
 
     nix-doom-emacs-unstraightened = {
@@ -103,26 +102,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixgl = {
-      url = "github:nix-community/nixGL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, yazi, rust-overlay, nixgl, ... }@inputs:
+  outputs = { nixpkgs, home-manager, yazi, rust-overlay, ... }@inputs:
     let
       system = "x86_64-linux";   
     in {
       homeConfigurations."ahsan" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { 
           inherit system;
-          overlays = [ nixgl.overlay ];
         };
         extraSpecialArgs = { 
           inherit inputs;
           inherit yazi;
           inherit rust-overlay;
-          inherit nixgl;
         };
 
         # Specify your home configuration modules here, for example,

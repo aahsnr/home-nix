@@ -56,7 +56,7 @@
     # ./hypridle
     # ./hyprpaper
     # ./hyprlock
-    # ./keyring
+    ./keyring
     # ./kitty
     ./lazygit
     # ./mpv

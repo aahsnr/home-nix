@@ -15,10 +15,12 @@
     hyprnome
     nix-prefetch-git
     nix-prefetch-github
-    rustup
+    rustc
+    cargo
     nodejs_22
     texlab
     emacs-lsp-booster
     yazi
+    blesh
   ];
 }

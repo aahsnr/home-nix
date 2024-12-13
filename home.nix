@@ -63,7 +63,7 @@
     ./lazygit
     # ./mpv
     ./pkgs
-    ./rofi
+    #./rofi
     ./starship
     # ./tealdeer
     # ./theming

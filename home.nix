@@ -44,7 +44,7 @@
     ./anyrun
     ./bat
     # ./cliphist
-    # ./direnv
+    ./direnv
     # ./emacs
     ./eza
     ./fastfetch
@@ -71,7 +71,7 @@
     # ./yazi
     # ./zathura
     ./zoxide
-    ./zsh
+    # ./zsh
     # inputs.ags.homeManagerModules.default
     inputs.anyrun.homeManagerModules.default
     # inputs.nix-doom-emacs-unstraightened.hmModule

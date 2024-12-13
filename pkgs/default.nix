@@ -2,25 +2,29 @@
 
 {
   home.packages = with pkgs; [
-    typescript
-    dart-sass
-    matugen
-    textlint
+    blesh
     bun
-    zellij
     bottom
-    markdownlint-cli
-    proselint
-    pyprland
+    cargo
+    dart-sass
+    emacs-lsp-booster
     hyprnome
+    matugen
+    markdownlint-cli
     nix-prefetch-git
     nix-prefetch-github
-    rustc
-    cargo
     nodejs_22
+    nwg-drawer
+    nwg-menu
+    proselint
+    pyprland
+    rofi-wayland-unwrapped
+    rustc
+    swww
     texlab
-    emacs-lsp-booster
-    yazi
-    blesh
+    textlint
+    typescript
+    # yazi
+    zellij
   ];
 }

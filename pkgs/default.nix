@@ -18,7 +18,7 @@
     nwg-menu
     proselint
     pyprland
-    rofi-wayland-unwrapped
+    #rofi-wayland-unwrapped
     rustc
     swww
     texlab

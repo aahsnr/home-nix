@@ -5,9 +5,10 @@
     blesh
     bun
     bottom
-    cargo
+    #cargo
     dart-sass
     emacs-lsp-booster
+    hyprland-qtutils
     hyprnome
     matugen
     markdownlint-cli
@@ -18,8 +19,9 @@
     nwg-menu
     proselint
     pyprland
+    rbenv
     #rofi-wayland-unwrapped
-    rustc
+    #rustc
     swww
     texlab
     textlint

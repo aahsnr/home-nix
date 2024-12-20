@@ -40,7 +40,7 @@
 
   imports = [ 
     # ./ags
-    # ./alacritty
+    ./alacritty
     ./anyrun
     ./bat
     # ./cliphist

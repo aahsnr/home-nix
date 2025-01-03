@@ -34,16 +34,14 @@
           0
         ];
       };
-
       tasks = {
         micro_workers = 5;
         macro_workers = 10;
         bizarre_retry = 5;
       };
-
-      plugins = [
-        full-border
-      ];
+      # plugins = [
+      #   full-border
+      # ];
     };
   };
 }

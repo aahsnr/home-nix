@@ -4,7 +4,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "Ubuntu Nerd Font";
+      name = "JetBrainsMono Nerd Font";
       size = 16;  
     };
     environment = {
@@ -32,12 +32,11 @@
       "kitty_mod+q" = "close_tab";
     };
 
-    #theme = "Catppuccin-Mocha";
+    theme = "Catppuccin-Macchiato";
     shellIntegration = {
       mode = "enabled";
       enableZshIntegration = true;
     };
   };
 }
-
 

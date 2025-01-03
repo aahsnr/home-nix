@@ -15,7 +15,7 @@
         TERM = "alacritty";
         WINIT_X11_SCALE_FACTOR = "1.0";
       };
-      fonts = {
+      font = {
         size = 22;
         bold.family = "Ubunut Nerd Font";
         bold_italic.family = "Ubuntu Nerd Font";
